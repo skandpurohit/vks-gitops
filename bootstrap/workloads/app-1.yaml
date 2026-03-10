@@ -1,24 +1,24 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: app-1
-  namespace: argocd-instance-1
-  annotations:
-    argocd.argoproj.io/sync-wave: "20"
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/skandpurohit/vks-gitops.git
-    path: workloads/cl01
-    targetRevision: main
-    directory:
-      recurse: true
-  destination:
-    name: cl01                    # matches the registered cluster name
-    namespace: demo-app
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: app-1
+#   namespace: argocd-instance-1
+#   annotations:
+#     argocd.argoproj.io/sync-wave: "20"
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/skandpurohit/vks-gitops.git
+#     path: workloads/cl01
+#     targetRevision: main
+#     directory:
+#       recurse: true
+#   destination:
+#     name: cl01                    # matches the registered cluster name
+#     namespace: demo-app
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
