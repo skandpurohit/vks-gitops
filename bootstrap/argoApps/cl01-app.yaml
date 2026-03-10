@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cl01
+  namespace: argocd-ns
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/skandpurohit/vks-gitops.git
+    path: clusters/cl01
+    targetRevision: main
+  destination:
+    server: https://192.168.22.6:443
+    namespace: workload-ns
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
