@@ -4,7 +4,7 @@ metadata:
   name: cl01
   namespace: argocd-instance-1
 spec:
-  project: default
+  project: workshop
   source:
     repoURL: https://github.com/skandpurohit/vks-gitops.git
     path: clusters/cl01
