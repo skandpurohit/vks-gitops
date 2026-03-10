@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cl01
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"  
   namespace: argocd-instance-1
 spec:
   project: default
