@@ -12,7 +12,7 @@ spec:
     path: clusters/cl01
     targetRevision: main
   destination:
-    name: sp-lab-supervisor
+    name: supervisor-ns-argocd-instance-1
     namespace: workload-ns
   syncPolicy:
     automated:
