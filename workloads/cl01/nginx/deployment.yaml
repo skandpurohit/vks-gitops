@@ -18,9 +18,9 @@ spec:
           type: RuntimeDefault
       containers:
         - name: nginx
-          image: dockerhub.packages.vcfd.broadcom.net/library/nginx:1.27
+          image: dockerhub.packages.vcfd.broadcom.net/nginxinc/nginx-unprivileged:stable
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
