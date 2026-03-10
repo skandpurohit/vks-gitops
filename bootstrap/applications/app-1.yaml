@@ -15,7 +15,7 @@ spec:
       recurse: true
   destination:
     name: cl01                    # matches the registered cluster name
-    namespace: default
+    namespace: demo-app
   syncPolicy:
     automated:
       prune: true
