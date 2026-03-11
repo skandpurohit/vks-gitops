@@ -45,12 +45,12 @@ spec:
           #user-defined name of the node pool; string
           name: node-pool-1
           #number of worker nodes in this pool; integer 0 or more
-          #replicas: 1
+          replicas: 1
           #enabling auto-scalar
-          metadata:
-            annotations:
-              cluster.x-k8s.io/cluster-api-autoscaler-node-group-max-size: "2" # Set required annotations for ClusterAutoscaler
-              cluster.x-k8s.io/cluster-api-autoscaler-node-group-min-size: "0"
+          #metadata:
+           # annotations:
+            #  cluster.x-k8s.io/cluster-api-autoscaler-node-group-max-size: "2" # Set required annotations for ClusterAutoscaler
+             # cluster.x-k8s.io/cluster-api-autoscaler-node-group-min-size: "0"
     #customize the cluster
     variables:
       #virtual machine class type and size for cluster nodes
