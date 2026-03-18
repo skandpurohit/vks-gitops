@@ -45,7 +45,7 @@ spec:
           #user-defined name of the node pool; string
           name: node-pool-1
           #number of worker nodes in this pool; integer 0 or more
-          replicas: 1
+          replicas: 2
           #enabling auto-scalar
           #metadata:
            # annotations:
