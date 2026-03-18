@@ -145,7 +145,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: busybox:latest
+        image: dockerhub.packages.vcfd.broadcom.net/library/busybox:latest
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
@@ -510,7 +510,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: redis:alpine
+        image: dockerhub.packages.vcfd.broadcom.net/library/redis:alpine
         ports:
         - containerPort: 6379
         readinessProbe:
