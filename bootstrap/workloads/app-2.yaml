@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-1
+  name: app-2
   namespace: argocd-instance-1
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-wave: "25"
 spec:
   project: default
   source:
     repoURL: https://github.com/skandpurohit/vks-gitops.git
-    path: workloads/cl01/nginx
+    path: workloads/cl01/online-boutique
     targetRevision: main
     directory:
       recurse: true
   destination:
     name: cl01                    # matches the registered cluster name
-    namespace: demo-app
+    namespace: online-boutique
   syncPolicy:
     automated:
       prune: true
