@@ -64,7 +64,7 @@ spec:
           cniRef:
             name: antrea
             namespace: vmware-system-vks-public
-      persistent storage class for cluster nodes
+      #persistent storage class for cluster nodes
       - name: storageClass
         value: vsan-esa-default-policy-raid5
 
