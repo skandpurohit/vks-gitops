@@ -3,6 +3,9 @@ kind: Application
 metadata:
   name: app-1
   namespace: argocd-instance-1
+  finalizers:
+    # The default behaviour is foreground cascading deletion
+    - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: "20"
 spec:

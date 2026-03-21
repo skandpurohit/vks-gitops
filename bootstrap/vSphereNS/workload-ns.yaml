@@ -2,6 +2,9 @@ apiVersion: field.vmware.com/v1
 kind: ArgoNamespace
 metadata:
   name: workload-ns
+  finalizers:
+    # The default behaviour is foreground cascading deletion
+    - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
