@@ -15,7 +15,7 @@ spec:
     directory:
       recurse: true
   destination:
-    name: cl01                    # matches the registered cluster name
+    name: cl03                    # matches the registered cluster name
     namespace: demo-app
   syncPolicy:
     automated:
