@@ -32,18 +32,6 @@ spec:
               drop:
                 - ALL
             runAsNonRoot: true
-      affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchLabels:
-                app: nginx
-            topologyKey: kubernetes.io/hostname
-      strategy:
-        type: RollingUpdate
-        rollingUpdate:
-          maxSurge: 1
-          maxUnavailable: 0
           readinessProbe:
             httpGet:
               path: /
@@ -60,3 +48,15 @@ spec:
             initialDelaySeconds: 10
             periodSeconds: 10
             timeoutSeconds: 2
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                app: nginx
+            topologyKey: kubernetes.io/hostname
+      strategy:
+        type: RollingUpdate
+        rollingUpdate:
+          maxSurge: 1
+          maxUnavailable: 0
