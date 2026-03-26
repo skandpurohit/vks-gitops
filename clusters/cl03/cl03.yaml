@@ -29,13 +29,13 @@ spec:
       name: builtin-generic-v3.5.0
       namespace: vmware-system-vks-public 
     #kubernetes version of the cluster; format is KR NAME
-    version: v1.32.10---vmware.1-fips-vkr.2
+    version: v1.32.0---vmware.6-fips-vkr.2
     #describe the cluster control plane
     controlPlane:
       #number of control plane nodes
       #integer value 1 or 3
       #NOTE: Production clusters require 3 control plane nodes
-      replicas: 2
+      replicas: 1
     #describe the cluster worker nodes
     workers:
       #specifies parameters for a set of worker nodes in the topology
@@ -45,7 +45,7 @@ spec:
           #user-defined name of the node pool; string
           name: node-pool-1
           #number of worker nodes in this pool; integer 0 or more
-          replicas: 2
+          replicas: 3
     #customize the cluster
     variables:
       #virtual machine class type and size for cluster nodes
