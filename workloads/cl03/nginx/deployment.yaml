@@ -36,3 +36,10 @@ spec:
             timeoutSeconds: 2
             successThreshold: 1
             failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 2
