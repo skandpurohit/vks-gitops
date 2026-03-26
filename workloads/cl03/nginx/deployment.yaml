@@ -8,6 +8,11 @@ spec:
   selector:
     matchLabels:
       app: nginx
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
   template:
     metadata:
       labels:
@@ -17,13 +22,20 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       terminationGracePeriodSeconds: 60
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app: nginx
+              topologyKey: kubernetes.io/hostname
       containers:
         - name: nginx
-          lifecycle:
-            prestop:
-            exec:
-              command: ["/bin/sleep", "15"]
           image: dockerhub.packages.vcfd.broadcom.net/nginxinc/nginx-unprivileged:stable
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sleep", "15"]
           ports:
             - containerPort: 8080
           securityContext:
@@ -48,15 +60,4 @@ spec:
             initialDelaySeconds: 10
             periodSeconds: 10
             timeoutSeconds: 2
-      affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchLabels:
-                app: nginx
-            topologyKey: kubernetes.io/hostname
-      # strategy:
-      #   type: RollingUpdate
-      #   rollingUpdate:
-      #     maxSurge: 1
-      #     maxUnavailable: 0
+            failureThreshold: 3
