@@ -22,13 +22,13 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       terminationGracePeriodSeconds: 60
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchLabels:
-                  app: nginx
-              topologyKey: kubernetes.io/hostname
+      topologySpreadContraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: ScheduleAnyway
+        lableSelector:
+          matchLabels:
+            app: nginx
       containers:
         - name: nginx
           image: dockerhub.packages.vcfd.broadcom.net/nginxinc/nginx-unprivileged:stable
