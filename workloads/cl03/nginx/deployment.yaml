@@ -22,11 +22,11 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       terminationGracePeriodSeconds: 60
-      topologySpreadContraints:
+      topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: kubernetes.io/hostname
         whenUnsatisfiable: ScheduleAnyway
-        lableSelector:
+        labelSelector:
           matchLabels:
             app: nginx
       containers:
