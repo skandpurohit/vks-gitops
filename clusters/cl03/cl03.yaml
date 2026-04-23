@@ -50,7 +50,7 @@ spec:
     variables:
       #virtual machine class type and size for cluster nodes
       - name: vmClass
-        value: guaranteed-medium
+        value: best-effort-medium
       #persistent storage class for cluster nodes
       - name: storageClass
         value: vsan-esa-default-policy-raid5
