@@ -39,8 +39,8 @@ spec:
                   - /bin/bash
                   - -c
                   - |
+                    sleep 30
                     nginx -s quit
-                    sleep 20
           ports:
             - containerPort: 8080
           securityContext:
