@@ -5,6 +5,7 @@ metadata:
   namespace: demo-app
 spec:
   type: LoadBalancer
+  externalTrafficPolicy: Local
   selector:
     app: nginx
   ports:
