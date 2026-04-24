@@ -1,6 +1,6 @@
 apiVersion: policy/v1
 kind: PodDisruptionBudget
-metadata: 
+metadata:
   name: nginx-pdb
   namespace: demo-app
 spec:
