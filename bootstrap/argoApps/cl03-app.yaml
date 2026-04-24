@@ -1,20 +1,20 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: cl03
-  annotations:
-    argocd.argoproj.io/sync-wave: "14"  
-  namespace: argocd-instance-1
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/skandpurohit/vks-gitops.git
-    path: clusters/cl03
-    targetRevision: main
-  destination:
-    name: sp-lab-supervisor
-    namespace: workload-ns
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: cl03
+#   annotations:
+#     argocd.argoproj.io/sync-wave: "14"  
+#   namespace: argocd-instance-1
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/skandpurohit/vks-gitops.git
+#     path: clusters/cl03
+#     targetRevision: main
+#   destination:
+#     name: sp-lab-supervisor
+#     namespace: workload-ns
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
