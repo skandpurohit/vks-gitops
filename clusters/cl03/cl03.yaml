@@ -29,7 +29,7 @@ spec:
       name: builtin-generic-v3.5.0
       namespace: vmware-system-vks-public 
     #kubernetes version of the cluster; format is KR NAME
-    version: v1.32.0---vmware.6-fips-vkr.2
+    version: v1.32.3---vmware.1-fips-vkr.2
     #describe the cluster control plane
     controlPlane:
       #number of control plane nodes
